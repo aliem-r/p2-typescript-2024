@@ -1,4 +1,4 @@
-export class GameResume {
+export class Game {
     id: number;
     title: string;
     thumbnail: string;
@@ -27,7 +27,16 @@ export const loadGames = async () => {
         `https://www.freetogame.com/api/games?platform=pc&sort-by=release-date`
     );
     const results: any[] = await response.json();
-    return results;
+    const games: Game[] = [];
+    const furstClass: Game = new Game(
+        123,
+        "Game Title",
+        "thumbnail.jpg",
+        "Lorem ipsum dolor sit amet",
+        "Shooter",
+        "Game Dev Studio"
+    );
+    return furstClass;
 };
 
 loadGames();
