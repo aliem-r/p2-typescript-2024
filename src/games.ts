@@ -28,15 +28,18 @@ export const loadGames = async () => {
     );
     const results: any[] = await response.json();
     const games: Game[] = [];
-    const furstClass: Game = new Game(
-        123,
-        "Game Title",
-        "thumbnail.jpg",
-        "Lorem ipsum dolor sit amet",
-        "Shooter",
-        "Game Dev Studio"
-    );
-    return furstClass;
+
+    for (const result of results) {
+        const gameInstance = new Game(
+            result.id,
+            result.title,
+            result.thumbnail,
+            result.short_description,
+            result.genre,
+            result.developer
+        );
+        games.push(gameInstance);
+    }
 };
 
 loadGames();
