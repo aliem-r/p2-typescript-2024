@@ -1,4 +1,4 @@
 import { writeFile } from "fs/promises";
 import { loadGames } from "./games.js";
 
-console.log(await loadGames());
+console.log(await loadGames(10));

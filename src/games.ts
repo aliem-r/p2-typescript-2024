@@ -22,14 +22,15 @@ export class Game {
     }
 }
 
-export const loadGames = async () => {
+export const loadGames = async (n: number) => {
     const response = await fetch(
         `https://www.freetogame.com/api/games?platform=pc&sort-by=release-date`
     );
     const results: any[] = await response.json();
     const games: Game[] = [];
 
-    for (const result of results) {
+    for (let i = 0; i < n; i++) {
+        const result = results[i];
         const gameInstance = new Game(
             result.id,
             result.title,
@@ -40,6 +41,6 @@ export const loadGames = async () => {
         );
         games.push(gameInstance);
     }
-};
 
-loadGames();
+    return games;
+};
