@@ -1,0 +1,95 @@
+:root {
+    --black: #0e1015;
+    --gark-grey-1: #13151b;
+    --gark-grey-2: #202328;
+    --gark-grey-3: #272a30;
+
+    --accent: #3cff00;
+
+    --white: #ffffff;
+    --light-grey-1: #afb1b6;
+    --light-grey-2: #6d7278;
+    --light-grey-3: #3a3e46;
+}
+
+body {
+    margin: 0;
+    padding: 50px;
+    background: var(--black);
+    color: var(--light-grey-1);
+    font-size: 16px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 400;
+}
+
+a,
+h1,
+h2,
+p {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+}
+
+/* index game cards */
+
+.game-card {
+    display: flex;
+    gap: 30px;
+    background: var(--gark-grey-1);
+    border: 1px solid var(--gark-grey-2);
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 200ms ease-in;
+}
+.game-card:hover {
+    border: 1px solid var(--light-grey-3);
+    transform: scale(1.02);
+}
+
+.game-card > img {
+    align-self: center;
+    max-height: 160px;
+    border-radius: 5px;
+}
+
+.game-card > section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.game-card > section .title h2 {
+    color: var(--white);
+    font-size: 24px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.game-card > section .title span {
+    color: var(--light-grey-2);
+    font-size: 14px;
+}
+
+.game-card > section .separator {
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: var(--gark-grey-3);
+}
+
+.game-card > section .tags * {
+    font-size: 13px;
+    padding: 3px 6px;
+    border-radius: 3px;
+    background: var(--gark-grey-3);
+    color: var(--light-grey-1);
+}
+.game-card > section .tags .free-tag {
+    background: var(--accent);
+    color: var(--black);
+    margin-right: 8px;
+    font-weight: 600;
+}
+
+/* details style */
