@@ -1,4 +1,8 @@
 import { writeFile } from "fs/promises";
 import { loadGames } from "./games.js";
+import { renderGames } from "./renderGames.js";
 
-console.log(await loadGames(10));
+const games = await loadGames(20);
+
+const html = renderGames(games);
+await writeFile("src/index.html", html);
