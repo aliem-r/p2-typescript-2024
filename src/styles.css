@@ -29,6 +29,9 @@ p {
     text-decoration: none;
     color: inherit;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* index game cards */

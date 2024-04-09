@@ -27,5 +27,5 @@ export const renderGames = (games: Game[]) => {
         </a>
         `;
     }
-    return render("🎮 free-to-play games", html);
+    return render("🎮 free-to-play PC games", html);
 };
