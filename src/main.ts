@@ -1,9 +1,11 @@
-import { readFile, writeFile } from "fs/promises";
-import { loadGames } from "./games.js";
-import { renderGames } from "./renderGames.js";
+import { loadGames, renderGames } from "./games.js";
+import { serve } from "./serve.js";
+
+const staticFolder = "./src/public";
 
 const games = await loadGames(20);
 
-const gamesHtml = renderGames(games);
-await writeFile("./src/public/index.html", gamesHtml);
-const html = await readFile("./src/public/index.html", "utf8");
+const html = renderGames(games);
+await Bun.write(`${staticFolder}/index.html`, html);
+
+await serve(staticFolder);
