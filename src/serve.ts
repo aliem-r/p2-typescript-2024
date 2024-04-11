@@ -1,8 +1,7 @@
-export const serve = (staticFolder: string) => {
+export const serve = async (staticFolder: string) => {
     const server = Bun.serve({
-        async fetch(req) {
+        fetch(req) {
             const path = new URL(req.url).pathname;
-            console.log("req.url: ", req.url);
             if (path === "/") {
                 return new Response(Bun.file(`${staticFolder}/index.html`));
             }
@@ -11,5 +10,5 @@ export const serve = (staticFolder: string) => {
     });
 
     console.log(`Listening on http://${server.hostname}:${server.port}/`);
-    return server;
+    return await server;
 };
