@@ -224,25 +224,8 @@ td {
     display: block;
     transition: all 200ms ease-in;
 }
-.game-details .section-1 a.game-url:hover::after,
-.game-details .section-1 a.back-to-home:hover::after {
+.game-details .section-1 a.game-url:hover::after {
     transform: translateX(8px);
-}
-
-.game-details .section-1 a.back-to-home {
-    display: block;
-    color: var(--white);
-    border-radius: 5px;
-    text-align: right;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    padding: 10px 25px;
-    background: var(--light-grey-3);
-}
-.game-details .section-1 a.back-to-home::after {
-    content: "BACK TO HOME ➜";
-    display: block;
-    transition: all 200ms ease-in;
 }
 
 .game-details .section-2 {

@@ -56,7 +56,7 @@ interface Image {
     image: string;
 }
 
-//load games from freetogame.com to an array of Game instances
+// Carga los juegos desde freetogame.com a un array de isntancias de clase Game
 export const loadGames = async (n: number) => {
     const response = await fetch(
         `https://www.freetogame.com/api/games?platform=pc&sort-by=release-date`
@@ -74,6 +74,7 @@ export const loadGames = async (n: number) => {
         );
         const details: any = await detailsResponse.json();
 
+        // Descarta los juegos que tengan algún campo nulo
         if (
             result.id != null &&
             result.title != null &&
@@ -115,7 +116,7 @@ export const loadGames = async (n: number) => {
     return games;
 };
 
-//render an array of Game instances to HTML
+// Genera las cards de los juegos para añadirlos al index.html
 export const renderGames = (game: Game) => {
     return `
         <a class="game-card" href="game/${game.id}.html" data-id="${game.id}">
@@ -136,6 +137,7 @@ export const renderGames = (game: Game) => {
         `;
 };
 
+// Genera el contenido del detalle para incluirlo al HTML de cada juego
 export const renderDetails = (game: Game) => {
     let description = `
     ${game.short_description}<br><br>${game.description.replace(
@@ -163,7 +165,6 @@ export const renderDetails = (game: Game) => {
                     alt="${game.title} Thumbnail"
                 />
                 <a class="game-url" href="${game.game_url}" target="_blank"></a>
-                <a class="back-to-home" href="${game.game_url}" target="_blank"></a>
             </div>
         </section>
         <section class="section-2">
