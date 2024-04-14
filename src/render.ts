@@ -1,4 +1,4 @@
-export const render = (title: string, body: string) => `
+export const render = (title: string, body: string, backDir: string = "") => `
 <html>
     <head>
         <meta charset="UTF-8" />
@@ -12,11 +12,11 @@ export const render = (title: string, body: string) => `
             href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="${backDir}styles.css" />
     </head>
     <body>
         <header class="container header-container">
-            <img src="assets/logo-fpcg.png" width="450" />
+            <a href="/"><img src="${backDir}assets/logo-fpcg.png" width="450" /></a>
             <p>
                 Discover the best free-to-play games: Explore a World of Endless
                 Entertainment!
