@@ -3,7 +3,7 @@ import { render } from "./render.js";
 import { serve } from "./serve.js";
 
 // Ruta relativa de la carpeta que sirve los archivos estáticos
-export const staticFolder = "./src/public";
+export const staticFolder = "./public";
 
 // Carga n juegos con loadGames() desde ./games.js
 const games = await loadGames(50);
