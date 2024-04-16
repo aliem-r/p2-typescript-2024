@@ -26,7 +26,7 @@ await serve(staticFolder);
 
 Nota:
 
-Me he dado en el último momento que si le cargas muchas peticiones (más de 4 por segundo) seguidas
+Me he dado cuenta en el último momento que si le cargas muchas peticiones (más de 4 por segundo) seguidas
 a la API te bloquea temporalmente la IP. Eso es porque para sacar los detalles
 de los juegos se hace una petición por cada juego con la id.
 
